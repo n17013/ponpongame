@@ -82,9 +82,31 @@ game.onload = function() {
       if (kumaCount % 5 == 0) {
       scene.addChild(kuma);
       kumaCount++;
+      var timer = function(){
+        scene.removeChild(kuma);
+        game.score = game.score - 100;
+        scoreLabel.text = "SCORE : "+game.score;
+        katen.text = "-100";
+        katen.moveTo(kuma.x, kuma.y);
+        scene.addChild(katen);
+        out.moveTo(kuma.x + 5, kuma.y +15);
+        scene.addChild(out);
+        }
+        setTimeout(timer, 15000);
       }else if (kumaCount % 6 == 0){
       scene.addChild(kuma2);
       kumaCount++;
+      var timer = function(){
+        scene.removeChild(kuma2);
+        game.score = game.score - 100;
+        scoreLabel.text = "SCORE : "+game.score;
+        katen.text = "-100";
+        katen.moveTo(kuma2.x, kuma2.y);
+        scene.addChild(katen);
+        out.moveTo(kuma2.x + 5, kuma2.y +15);
+        scene.addChild(out);
+        }
+        setTimeout(timer, 15000);
       }else if(kumaCount > 10){
         if (kumaCount % 2 == 0) {
         scene.addChild(kuma);
